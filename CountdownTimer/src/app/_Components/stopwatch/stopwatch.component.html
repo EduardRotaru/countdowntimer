@@ -1,0 +1,41 @@
+<div class="stopwatch-container">
+    <form [formGroup]="timerForm" (ngSubmit)="startTimeDownSetInterval()" class="stopwatch-form">
+
+        <label for="" class="stopwatch-form__label">Year</label>
+        <label for="" class="stopwatch-form__label">Month</label>
+        <label for="" class="stopwatch-form__label">Day</label>
+        <label for="" class="stopwatch-form__label">Hour</label>
+        <label for="" class="stopwatch-form__label">Minutes</label>
+        <label for="" class="stopwatch-form__label">Seconds</label>
+
+        <input formControlName="year" class="stopwatch-form__inputYear" placeholder={{defaultYear}}>
+
+        <select class="stopwatch-form__input" formControlName="month">
+            <option *ngFor="let month of monthsTemp" [ngValue]="month" >{{month}}</option>
+        </select>
+
+        <select class="stopwatch-form__input" formControlName="day">
+            <option *ngFor="let day of daysTemp" [value]="day">{{day}}</option>
+        </select>
+
+        <select class="stopwatch-form__input" formControlName="hour">
+            <option *ngFor="let hour of hours" [value]="hour">{{hour}}</option>
+        </select>
+
+        <select class="stopwatch-form__input" formControlName="minute" >
+            <option *ngFor="let minute of minutes" [value]="minute">{{minute}}</option>
+        </select>
+
+        <select class="stopwatch-form__input" formControlName="seconds" >
+            <option *ngFor="let second of seconds" [value]="second">{{second}}</option>
+        </select>
+
+        <span *ngIf="!timerForm.get('year')?.valid && timerForm.get('year')?.touched" class="year-invalid__message">From {{defaultYear}} to 2100</span>
+
+        <button [ngClass]="{'year-invalid':!timerForm.get('year')?.valid && timerForm.get('year')?.touched}" class="stopwatch-form__btn-start" type="submit" [disabled]="timerForm.invalid">Start </button>
+        <button type="button" class="stopwatch-form__btn-reset" (click)="resetForm()">Reset</button>
+        <p class="stopwatch-timer">
+            {{timer}}
+        </p>
+    </form>
+</div>

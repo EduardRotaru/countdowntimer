@@ -1,0 +1,28 @@
+.nav {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-item {
+    bottom: 0;
+    border-bottom: #110066 solid 1px;
+    cursor: pointer;
+    margin-top: 100px;
+    padding: 10px 30px 10px 30px;
+}
+
+.nav-item:hover {
+    background: #FFD432;
+    border-bottom: #FFD432 solid 1px;
+    transition: border-color 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nav-item a {
+    color: #110066;
+    font-size: 1.5rem;
+}
+
+.nav-link__active {
+    background: #FFD432;
+    border-bottom: #FFD432 solid 1px;
+}

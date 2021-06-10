@@ -1,0 +1,16 @@
+<div class="nav">
+    <div class="nav-item" [routerLink]="['']" [routerLinkActive]="['nav-link__active']" [routerLinkActiveOptions]="{ exact: true }">
+        <a>Current Time</a>
+    </div>
+    <div class="nav-item" [routerLink]="['/timer']" [routerLinkActive]="['nav-link__active']">
+        <a>Timer</a>
+    </div>
+    <div class="nav-item" [routerLink]="['/stopwatch']" [routerLinkActive]="['nav-link__active'] ">
+        <a>Stopwatch</a>
+    </div>
+    <div class="nav-item" [routerLink]="['/alarm']" [routerLinkActive]="['nav-link__active']">
+        <a>Alarm</a>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

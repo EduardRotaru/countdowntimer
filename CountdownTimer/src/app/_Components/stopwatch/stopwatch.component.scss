@@ -1,0 +1,80 @@
+.stopwatch-container {
+    display: flex;
+    flex-direction: nowrap;
+    justify-content: center;
+}
+
+.stopwatch-form {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(6, 100px);
+}
+
+.stopwatch-form__input {
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0px;
+    border-left: 0;
+}
+
+.stopwatch-form__inputYear {
+    width: 76% !important;
+    padding: 10px;
+    margin: 20px 0px;
+}
+
+.stopwatch-form__label {
+    justify-self: center;
+    padding-top: 30px;
+}
+
+.stopwatch-form__btn-start {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    width: 90%;
+    justify-self: center;
+    background-color: white;
+    color: #110066;
+    border: #110066 solid 1px;
+    height:100%;
+    align-self: center;
+    padding: 5px;
+}
+
+.stopwatch-form__btn-start:hover {
+    background-color: #FFD432;
+    border: none;
+}
+
+.stopwatch-form__btn-reset {
+    grid-column: 2 / 3;
+    width: 90%;
+    justify-self: center;
+    background-color: #f54748;
+    color: white;
+    border: #f54748 solid 1px;
+    font-size: 0.7rem;
+    height:100%;
+    align-self: center;
+    padding: 5px;
+}
+
+.stopwatch-timer {
+    grid-column: 1 / span 6;
+    grid-row: 4 / 5;
+    font-size:1.5rem;
+    font-family: 'Indie Flower', cursive;
+}
+
+.year-invalid__message {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    color:red;
+    font-size: 0.7rem;
+    justify-self:center;
+    margin-bottom: 1rem;
+}
+
+.year-invalid:hover{
+    cursor: not-allowed;
+}

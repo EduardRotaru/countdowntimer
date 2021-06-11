@@ -17,3 +17,7 @@ export class TimeZoneComponent implements OnInit {
 // https://timezonedb.com/
 // Play with this api (postman first)
 // Find 3 fun challenges to do
+
+// List Time Zone
+// Get Time Zone
+// Convert Time Zone

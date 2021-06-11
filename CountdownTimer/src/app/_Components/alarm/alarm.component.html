@@ -1,1 +1,53 @@
-<p>alarm works!</p>
+<div class="alarm-container">
+    <form class="alarm-form" [formGroup]="timeForm" (ngSubmit)="setAlarm()">
+
+        <div  class="time-input__hour">
+            <label for="" class="time-input__hour_lbl">HH</label>
+            <select formControlName="hour">
+                <option  *ngFor="let h of hours" [value]="h">{{h}}</option>
+            </select>
+        </div>
+
+        <div class="time-input__minute">
+        <label for="" class="time-input__minute_lbl">MM</label>
+            <select  formControlName="minute">
+                <option  *ngFor="let m of minutes" [value]="m">{{m}}</option>
+            </select>
+        </div>
+
+        <div  class="time-input__period">
+        <label for="" class="time-input__period_lbl">P</label>
+            <select formControlName="period">
+                <option *ngFor="let p of periods" [value]="p">{{p}}</option>
+            </select>
+        </div>
+
+        <ng-multiselect-dropdown
+            class="dropdown-days"
+            formControlName = "days"
+            [placeholder]="'Select day'"
+            [settings]="dropdownSettings"
+            [data]="daysOfTheWeek"
+            [(ngModel)]="selectedDays"
+            (onSelect)="onItemSelect($event)"
+            (onSelectAll)="onSelectAll($event)"
+            (onDeSelect)="onItemDeSelect($event)"
+            (click)="resetSelection()">
+        </ng-multiselect-dropdown>
+
+        <button class="alarm-form__btn__start" type="submit" >Start </button>
+
+        <div class="alarm-list">
+            <p class="alarm-list_title" >All Alarms</p>
+            <ul class="alarm-list" *ngFor="let a of alarms; let i = index">
+                <li>{{a.hour}} - {{a.minute}} - {{a.period}}</li>
+                <li>{{a.day}}</li>
+                <li>
+                    <button type="button" class="stopwatch-form__btn-reset" (click)="removeAlarm(i)">Remove</button>
+                </li>
+            </ul>
+        </div>
+    </form>
+
+</div>
+

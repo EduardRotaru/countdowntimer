@@ -8,6 +8,8 @@ import { StopwatchComponent } from './_Components/stopwatch/stopwatch.component'
 import { TimeZoneComponent } from './_Components/time-zone-component/time-zone-component';
 import { AlarmComponent } from './_Components/alarm/alarm.component';
 import { TimerComponent } from './_Components/timer-component/timer-component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -19,9 +21,11 @@ import { TimerComponent } from './_Components/timer-component/timer-component';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgMultiSelectDropDownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

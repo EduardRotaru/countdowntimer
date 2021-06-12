@@ -77,13 +77,24 @@ export class AlarmComponent implements OnInit {
     date.setHours(this.hourValue);
     date.setMinutes(this.minuteValue);
 
-    var diff = new Date().getTime() - date.getTime();
+    var interval = setInterval(() => {
+    var diff =  date.getTime() - new Date().getTime(); 
 
-    setTimeout(() => {
-      alert('alarm is up');
-    }, diff);
+      if(diff < 1) {
+        // to enhance this I can take the current day and see if is in the selected days
+        // I could have a boolean for enabled or disabled for the alarm
+        // make a alarm play a sound
+        // this is enough for a demo
+        this.soundAlarm();
+        clearInterval(interval);
+      }
+    }, 1000)
 
     this.selectedDays = [];
+  }
+
+  soundAlarm(){
+    alert("sound alarm")
   }
 
   onItemSelect(item: any) {
@@ -120,7 +131,3 @@ export class Alarm {
     this.period = period;
   }
 }
-
-// Display all alarms, remove days if so
-// Document more, if is PM, AM
-// Make it ring at the right time
